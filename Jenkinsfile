@@ -21,7 +21,7 @@ pipeline {
         }
     }
     stage("Deploy to EKS") {
-        step {
+        steps {
             script {
                 dir('kuber-yaml') {
                     sh "aws eks update-kubeconfig --name eks-cluster-micro-app"
