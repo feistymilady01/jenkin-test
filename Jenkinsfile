@@ -20,14 +20,16 @@ pipeline{
             }
         }
     }
-    stage("Deploy to EKS"){
-        step {
-            script {
-                dir('kuber-yaml'){
-                    sh "aws eks update-kubeconfig --name eks-cluster-micro-app"
-                    sh "kubectl apply -f nginx-deploy.yaml"
-                    sh "kubectl apply -f nginx-serv-deploy.yaml"
-                    sh "kubectl apply -f promth-deploy.yaml"
+    stages{
+        stage("Deploy to EKS"){
+            step {
+                script {
+                    dir('kuber-yaml'){
+                        sh "aws eks update-kubeconfig --name eks-cluster-micro-app"
+                        sh "kubectl apply -f nginx-deploy.yaml"
+                        sh "kubectl apply -f nginx-serv-deploy.yaml"
+                        sh "kubectl apply -f promth-deploy.yaml"
+                    }
                 }
             }
         }
