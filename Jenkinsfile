@@ -9,13 +9,12 @@ pipeline {
         CLUSTER_NAME="eks-cluster-micro-app"
     }
     stages {
-        stage("Create EKS cluster") {
+        stage("Create an EKS Cluster") {
             steps {
                 script {
                     dir('k8-terraform') {
-                        cd "k8-terraform"
                         sh "terraform init"
-                        sh "terraform apply --auto-approve"
+                        sh "terraform apply -auto-approve"
                     }
                 }
             }
