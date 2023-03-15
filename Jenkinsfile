@@ -12,7 +12,8 @@ pipeline {
         stage("Create EKS cluster") {
             steps {
                 script {
-                    dir('terraform') {
+                    dir('k8-terraform') {
+                        cd "k8-terraform"
                         sh "terraform init"
                         sh "terraform apply --auto-approve"
                     }
