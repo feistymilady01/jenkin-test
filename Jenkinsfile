@@ -20,10 +20,11 @@ pipeline {
         stage("Deploy to EKS") {
             steps {
                 script {
-                    dir('kubernetes') {
+                    dir('kuber-yaml') {
                         sh "aws eks update-kubeconfig --name eks-cluster-micro-app"
                         sh "kubectl apply -f nginx-deploy.yaml"
                         sh "kubectl apply -f nginx-serv-deploy.yaml"
+                        sh "kubectl apply -f complete-demo.yaml"
                         sh "bash monitoring.sh"
                     }
                 }
