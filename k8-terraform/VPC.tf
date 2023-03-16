@@ -25,3 +25,4 @@ module "vpc" {
     "kubernates.io/role/elb" = 1
   }
   }
+}
