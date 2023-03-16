@@ -1,19 +1,18 @@
 module "eks" {
-  source  = "terraform-aws-modules/eks/aws"
-  version = "-> 19.0"
-  cluster_name                    = "eks-cluster-micro-app"
-  cluster_version                 = 1.24
-  cluster_endpoint_private_access = true
-  cluster_endpoint_public_access  = true
+    source  = "terraform-aws-modules/eks/aws"
+    version = "~> 19.0"
+    cluster_name = "eks-cluster-micro-app"
+    cluster_version = "1.24"
 
-  vpc_id     = module.vpc-micro-app.vpc_id
-  subnet_ids = module.vpc-micro-app.cluster_private_subnets
+    cluster_endpoint_public_access  = true
 
-  tags = {
-        Owner = "default"
-        environment = "deployment"
+    vpc_id = module.myapp-vpc.vpc_id
+    subnet_ids = module.myapp-vpc.private_subnets
+
+    tags = {
+        environment = "development"
         application = "micro-app"
-      }
+    }
 
     eks_managed_node_groups = {
         dev = {
@@ -23,6 +22,5 @@ module "eks" {
 
             instance_types = ["t2.small"]
         }
-    
-  }
+    }
 }
