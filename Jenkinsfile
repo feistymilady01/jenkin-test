@@ -10,7 +10,7 @@ pipeline {
         stage("Create an EKS Cluster") {
             steps {
                 script {
-                    dir('k8-terraform') {
+                    dir('./k8-terraform') {
                         sh "terraform init"
                         sh "terraform apply -auto-approve"
                     }
@@ -24,7 +24,7 @@ pipeline {
                         sh "aws eks update-kubeconfig --name eks-cluster-micro-app"
                         sh "kubectl apply -f nginx-deploy.yaml"
                         sh "kubectl apply -f nginx-serv-deploy.yaml"
-                        sh "kubectl apply -f promth-deploy.yaml"
+                        sh "bash monitoring.sh"
                     }
                 }
             }

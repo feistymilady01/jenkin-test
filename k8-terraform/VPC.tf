@@ -1,5 +1,5 @@
 data "aws_availability_zones" "azs" {}
-module "vpc" {
+module "vpc-micro-app" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "~> 3.0"
   name = "micro-app"
