@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="./images/icon.png">
-    <link rel="stylesheet" href="form.css">
-    <title>Car-app</title>
+    <link rel="stylesheet" href="index.css">
+    <title>Best-color</title>
 </head>
+
 <body>
-    <div>
-        <img src="./images/logo.png" alt="logo">
-        <h1>Vehicle Registration Form</h1>
-        <h3></h3>
-        <form action="submit-form.php" method="POST">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="5" cols="30" required></textarea><br><br>
-            <input type="submit" value="Submit">
-        </form>
+    <div class="container">
+        <img src="./images/logo.png" alt="company-logo">
+        <h1>What's your favorite color?</h1>
     </div>
+
+    <form action="index.php" method="post" class="form">
+        <img src="images/download (2).jpeg" alt="baby-color" class="baby">
+        <div class="radio">
+            <label class="color">
+                <input type="radio" name="color" value="red" class="color">
+                <p>Red</p>
+            </label>
+            <label>
+                <input type="radio" name="color" value="blue" class="color">
+                <p>Blue</p>
+            </label>
+            <label>
+                <input type="radio" name="color" value="green">
+                <p>Green</p>
+            </label>
+            <br>
+            <input type="submit" value="Vote" class="btn">
+        </div>
+    </form>
 </body>
+
 </html>

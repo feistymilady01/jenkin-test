@@ -1,0 +1,46 @@
+body{
+    background-color: rgb(11, 91, 153);
+    background-repeat: no-repeat;
+    background-size: 20%;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.form{
+    border: 1px solid sandybrown;
+    border-radius: 5px;
+    box-shadow: 5px;
+    box-sizing: border-box;
+    width: 500px;
+    display: flex;
+    margin: auto;
+   }
+
+p,.btn{
+    color: rgb(185, 59, 27);
+    width: 50px;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.baby, .btn{
+    width: 250px;
+}
+
+.radio{
+    background-color: sandybrown;
+    width: 250px;
+}
+
+.btn{
+    background-color: sandybrown;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    cursor: progress;
+}
+.btn:hover{
+    background-color: rgb(154, 207, 248);
+}
